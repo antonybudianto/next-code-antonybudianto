@@ -1,36 +1,40 @@
+import { useState } from "react";
 import Head from "next/head";
+import BenchmarkCard from "../components/BenchmarkCard";
+
+const code1 = `const n = 5000000;
+const res = (n * (n+1)) / 2;
+`;
+const code2 = `const n = 5000000;
+let res = 0;
+for(let i=1; i <= n; i++) {
+  res += i;
+}
+`;
 
 export default function Home() {
   return (
-    <div className="overflow-hidden flex justify-center items-center h-screen">
+    <div className="container mx-auto flex flex-col justify-center items-center h-screen">
       <Head>
-        <title>Hello</title>
+        <title>JSBench</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="px-4 sm:px-6 md:px-8">
         <div className="text-center">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 mt-8 mb-8 sm:mt-14 sm:mb-10">
-            Welcome
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-red-600 tracking-tight mt-8 mb-8 sm:mt-14 sm:mb-10">
+            JSBench
           </h1>
           <p className="text-gray-500 text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
-            Starter for any use case
+            Benchmark your JS code!
           </p>
-          <div className="flex flex-wrap justify-center space-y-4 sm:space-y-0 sm:space-x-4 text-center">
-            <a
-              className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
-              href="/docs"
-            >
-              Get started
-            </a>
-            <a
-              className="w-full sm:w-auto flex-none bg-pink-400 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
-              href="/docs"
-            >
-              View demo
-            </a>
-          </div>
+
+          <BenchmarkCard code={code1} />
+          <BenchmarkCard code={code2} />
         </div>
+      </div>
+      <div className="m-5 py-5 text-gray-500">
+        by Antony Budianto. {new Date().getFullYear()}.
       </div>
     </div>
   );
