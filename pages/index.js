@@ -13,7 +13,7 @@ for(let i = 1; i <= n; i++) {
 
 export default function Home() {
   return (
-    <div className="container mx-auto flex flex-col justify-center items-center h-screen">
+    <div className="container mx-auto flex flex-col justify-center items-center h-auto md:h-screen">
       <Head>
         <title>JSBench</title>
         <link rel="icon" href="/favicon.ico" />
