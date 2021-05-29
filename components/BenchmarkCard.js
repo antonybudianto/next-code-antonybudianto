@@ -53,7 +53,7 @@ const BenchmarkCard = ({ code: initCode }) => {
         const slowest = roundMs(sorted[sorted.length - 1]);
 
         return (
-          <div className="flex mb-2 shadow-md p-4">
+          <div className="flex md:flex-row flex-col mb-2 shadow-md p-4 md:w-auto mx-auto">
             <div className="flex-grow">
               <Editor
                 padding={2}
@@ -68,7 +68,7 @@ const BenchmarkCard = ({ code: initCode }) => {
                 }}
               />
             </div>
-            <div className="ml-5 w-100">
+            <div className="md:ml-5 w-100">
               <button
                 className="disabled:opacity-50 w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-sm leading-2 font-semibold py-2 px-5 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200"
                 disabled={loading}
@@ -78,7 +78,7 @@ const BenchmarkCard = ({ code: initCode }) => {
               </button>
             </div>
             <div
-              className="ml-5 text-left bg-white p-1"
+              className="md:ml-5 mt-5 md:mt-0 text-left bg-white p-1"
               style={{
                 width: "160px",
                 fontSize: "10pt",
