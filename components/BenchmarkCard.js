@@ -53,7 +53,7 @@ const BenchmarkCard = ({ code: initCode }) => {
         const slowest = roundMs(sorted[sorted.length - 1]);
 
         return (
-          <div className="flex md:flex-row flex-col mb-2 shadow-md p-4 md:w-auto mx-auto">
+          <div className="flex flex-col md:flex-row mb-2 shadow-md p-4 md:w-auto mx-auto">
             <div className="flex-grow">
               <Editor
                 padding={2}
