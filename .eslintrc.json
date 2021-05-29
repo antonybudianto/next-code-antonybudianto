@@ -1,0 +1,26 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "env": {
+    "commonjs": true,
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "allowImportExportEverywhere": true,
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
+  },
+  "globals": {
+    "React": "writable"
+  }
+}

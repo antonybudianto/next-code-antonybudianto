@@ -1,13 +1,12 @@
-import { useState } from "react";
 import Head from "next/head";
 import BenchmarkCard from "../components/BenchmarkCard";
 
 const code1 = `const n = 5000000;
-const res = (n * (n+1)) / 2;
+const res = (n * (n + 1)) / 2;
 `;
 const code2 = `const n = 5000000;
 let res = 0;
-for(let i=1; i <= n; i++) {
+for(let i = 1; i <= n; i++) {
   res += i;
 }
 `;

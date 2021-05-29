@@ -1,13 +1,15 @@
 self.addEventListener(
   "message",
   function (e) {
-    // self.postMessage(e.data);
     run(e.data, 100);
   },
   false
 );
 
-async function run(code, TOTAL_RUN) {
+function run(code, TOTAL_RUN) {
+  if (/postMessage\([^)]*\)/.test(code)) {
+    throw new Error("Invalid code");
+  }
   for (let i = 0; i < TOTAL_RUN; i++) {
     performance.mark("functionStart");
     eval(code);
@@ -18,6 +20,6 @@ async function run(code, TOTAL_RUN) {
   performance.clearMarks();
   performance.clearMeasures();
   const result = res.map((r) => ({ duration: r.duration }));
-  postMessage(result);
+  self.postMessage(result);
   return res;
 }
