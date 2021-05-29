@@ -78,9 +78,8 @@ const BenchmarkCard = ({ code: initCode }) => {
               </button>
             </div>
             <div
-              className="md:ml-5 mt-5 md:mt-0 text-left bg-white p-1"
+              className="md:ml-5 w-auto md:w-11/12 mt-5 md:mt-0 text-left bg-white p-1"
               style={{
-                width: "160px",
                 fontSize: "10pt",
               }}
             >
